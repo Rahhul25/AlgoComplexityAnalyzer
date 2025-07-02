@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Time and Space Complexity Analyzer</title>
+</head>
+<body>
+<h2>Enter your Java code:</h2>
+<form action="/analyze" method="post">
+    <textarea name="code" rows="15" cols="100" required></textarea><br>
+    <button type="submit">Analyze</button>
+</form>
+
+<div th:if="${result != null}">
+    <h3>Results:</h3>
+    <p><strong>Time Complexity:</strong> <span th:text="${result.timeComplexity}"></span></p>
+    <p><strong>Space Complexity:</strong> <span th:text="${result.spaceComplexity}"></span></p>
+</div>
+</body>
+</html>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    color: #2c3e50;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-left: 5px solid #3498db;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+</style>
+

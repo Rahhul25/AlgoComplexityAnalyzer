@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Time and Space Complexity Analyzer</title>
+</head>
+<body>
+<h2>Enter your Java code:</h2>
+<form action="/analyze" method="post">
+    <textarea name="code" rows="15" cols="100" required></textarea><br>
+    <button type="submit">Analyze</button>
+</form>
+
+<div th:if="${result != null}">
+    <h3>Results:</h3>
+    <p><strong>Time Complexity:</strong> <span th:text="${result.timeComplexity}"></span></p>
+    <p><strong>Space Complexity:</strong> <span th:text="${result.spaceComplexity}"></span></p>
+</div>
+</body>
+</html>
